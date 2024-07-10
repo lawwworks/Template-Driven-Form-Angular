@@ -6,7 +6,7 @@ import { TemplateFormComponent } from './template-form/template-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule} from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSortModule } from '@angular/material/sort';
@@ -37,7 +37,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatRadioModule, MatDatepickerModule,MatNativeDateModule
   
   ], 
-  providers: [MatDatepickerModule, MatNativeDateModule],
+  providers: [MatDatepickerModule, MatNativeDateModule, {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
